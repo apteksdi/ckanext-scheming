@@ -65,13 +65,17 @@ dataset_fields:
   label: Kategori
   output_validators: ignore_missing
 
+- field_name: accrualPeriodicity
+  label: Periode Data
+  output_validators: ignore_missing
+
 - field_name: author
   label: Produsen Data
   form_placeholder: eg. Direktorat Alokasi Pendanaan Pembangunan
   display_property: dc:creator
 
 - field_name: author_email
-  label: Author Email
+  label: Email Produsen Data
   form_placeholder: joe@example.com
   display_property: dc:creator
   display_snippet: email.html
@@ -117,14 +121,7 @@ dataset_fields:
 
 - field_name: prioritas_tahun
   label: Data Prioritas
-  preset: multiple_checkbox
-  choices:
-  - value: '2022'
-    label: 2022
-  - value: '2023'
-    label: 2023
-  - value: '2024'
-    label: 2024
+  output_validators: ignore_missing
 
 - field_name: publisher_type
   label: Tipe Instansi
@@ -160,3 +157,57 @@ resource_fields:
 - field_name: format
   label: Format
   preset: resource_format_autocomplete
+
+- field_name: id_msi
+  label: Kode Metadata Indikator
+  form_placeholder: https://sirusa.web.bps.go.id/metadata/indikator/4120
+  display_property: foaf:"https://sirusa.web.bps.go.id/metadata/kegiatan/
+  display_snippet: link.html
+
+- field_name: id_msk
+  label: Kode Metadata Kegiatan
+  form_placeholder: https://sirusa.web.bps.go.id/metadata/kegiatan/185
+  display_property: foaf:"https://sirusa.web.bps.go.id/metadata/kegiatan/
+  display_snippet: link.html
+
+- field_name: interpretasi
+  label: Interpretasi
+  output_validators: ignore_missing
+
+- field_name: metode_perhitungan
+  label: Metode Perhitungan
+  output_validators: ignore_missing
+
+- field_name: rumus
+  label: Rumus
+  output_validators: ignore_missing
+
+- field_name: klasifikasi
+  label: Variabel Disaggregasi/Klasifikasi
+  output_validators: ignore_missing
+
+- field_name: kodereferensi
+  label: Kode Referensi
+  form_placeholder: https://sirusa.web.bps.go.id/metadata/kegiatan/185
+  display_property: foaf:"https://sirusa.web.bps.go.id/metadata/kegiatan/
+  display_snippet: link.html
+
+- field_name: indikator_komposit
+  label: Indikator Komposit
+  output_validators: ignore_missing
+
+- field_name: level_estimasi
+  label: Level Estimasi
+  output_validators: ignore_missing
+
+- field_name: accrualPeriodicity
+  label: Jadwal Pemutakhiran
+  output_validators: ignore_missing
+
+- field_name: kriteria_prioritas
+  label: Kriteria Prioritas
+  output_validators: ignore_missing
+
+- field_name: indikator_prioritas
+  label: Indikator Prioritas
+  output_validators: ignore_missing

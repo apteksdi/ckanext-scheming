@@ -1,0 +1,24 @@
+scheming_version: 2
+dataset_type: import_datapackage
+about: A reimplementation of the default CKAN dataset schema
+about_url: http://github.com/ckan/ckanext-scheming
+
+
+dataset_fields:
+
+- field_name: url
+  label: URL
+  help_text: Make and model
+  help_inline: true
+  preset: select
+  choices:
+  - value: http://10.42.0.15/data/static/metadata/4466-keg-04.json
+    label: CONTOH 01
+  - value: http://10.42.0.15/data/static/metadata/4466-keg-04.json
+    label: CONTOH 02
+  - value: http://10.42.0.15/data/static/metadata/4466-keg-04.json
+    label: CONTOH 03
+  - value: http://10.42.0.15/data/static/metadata/4466-keg-04.json
+    label: CONTOH 04
+  - value: http://10.42.0.15/data/static/metadata/4466-keg-04.json
+    label: CONTOH 04

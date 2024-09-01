@@ -1,0 +1,217 @@
+scheming_version: 2
+dataset_type: statistik
+about: A reimplementation of the default CKAN dataset schema
+about_url: http://github.com/ckan/ckanext-scheming
+
+
+dataset_fields:
+
+- field_name: title
+  label: Title
+  preset: title
+  form_placeholder: eg. A descriptive title
+
+- field_name: name
+  label: URL
+  preset: dataset_slug
+  form_placeholder: eg. my-dataset
+
+- field_name: notes
+  label: Definisi
+  form_snippet: markdown.html
+  form_placeholder: eg. Some useful notes about the data
+
+- field_name: tag_string
+  label: Konsep
+  preset: tag_string_autocomplete
+  form_placeholder: eg. economy, mental health, government
+
+- field_name: owner_org
+  label: Organization
+  preset: dataset_organization
+
+- field_name: url
+  label: Source
+  form_placeholder: http://example.com/dataset.json
+  display_property: foaf:homepage
+  display_snippet: link.html
+
+- field_name: version
+  label: Version
+  validators: ignore_missing unicode_safe package_version_validator
+  form_placeholder: '1.0'
+
+- field_name: author
+  label: Produsen Data
+  form_placeholder: eg. Direktorat Alokasi Pendanaan Pembangunan
+  display_property: dc:creator
+
+- field_name: author_email
+  label: Email Produsen Data
+  form_placeholder: joe@example.com
+  display_property: dc:creator
+  display_snippet: email.html
+  display_email_name_field: author
+
+- field_name: maintainer
+  label: Walidata
+  form_placeholder: eg. Pusat Data dan Informasi
+  display_property: dc:contributor
+
+- field_name: maintainer_email
+  label: Email Walidata
+  form_placeholder: joe@example.com
+  display_property: dc:contributor
+  display_snippet: email.html
+  display_email_name_field: maintainer
+
+- field_name: accrualPeriodicity
+  label: Periode Data
+  output_validators: ignore_missing
+
+- field_name: accessRights
+  label: Akses Data
+  help_text: Make and model
+  help_inline: true
+  preset: select
+  choices:
+  - value: terbuka
+    label: Terbuka
+  - value: terbatas
+    label: Terbatas
+  - value: tertutup
+    label: Tertutup
+
+- field_name: id_dds
+  label: Kode Daftar Data
+  output_validators: ignore_missing
+
+- field_name: id_indikator_mms
+  label: Kode Indikator MMS
+  output_validators: ignore_missing
+
+- field_name: id_sds
+  label: Kode Standar Data
+  output_validators: ignore_missing
+
+- field_name: satuan
+  label: Satuan
+  output_validators: ignore_missing
+
+- field_name: ukuran
+  label: Ukuran
+  output_validators: ignore_missing  
+
+- field_name: jenis
+  label: Jenis Data
+  output_validators: ignore_missing
+
+- field_name: theme
+  label: Kategori
+  output_validators: ignore_missing
+
+#- field_name: prioritas_tahun
+#  label: Data Prioritas
+#  help_text: Make and model
+#  help_inline: true
+#  preset: select
+#  choices:
+#  - value: 2022
+#    label: 2022
+#  - value: 2023
+#    label: 2023
+#  - value: 2024
+#    label: 2024
+
+- field_name: prioritas_tahun
+  label: Data Prioritas
+  output_validators: ignore_missing
+
+- field_name: publisher_type
+  label: Tipe Instansi
+  help_text: Make and model
+  help_inline: true
+  preset: select
+  choices:
+  - value: pusat
+    label: Kementerian/Lembaga
+  - value: daerah-provinsi
+    label: Provinsi
+  - value: daerah-kota
+    label: Kota
+  - value: daerah-kabupaten
+    label: Kabupaten
+
+
+resource_fields:
+
+- field_name: url
+  label: URL
+  preset: resource_url_upload
+
+- field_name: name
+  label: Name
+  form_placeholder: eg. January 2011 Gold Prices
+
+- field_name: description
+  label: Description
+  form_snippet: markdown.html
+  form_placeholder: Some useful notes about the data
+
+- field_name: format
+  label: Format
+  preset: resource_format_autocomplete
+
+- field_name: id_msi
+  label: Kode Metadata Indikator
+  form_placeholder: https://sirusa.web.bps.go.id/metadata/indikator/4120
+  display_property: foaf:"https://sirusa.web.bps.go.id/metadata/kegiatan/
+  display_snippet: link.html
+
+- field_name: id_msk
+  label: Kode Metadata Kegiatan
+  form_placeholder: https://sirusa.web.bps.go.id/metadata/kegiatan/185
+  display_property: foaf:"https://sirusa.web.bps.go.id/metadata/kegiatan/
+  display_snippet: link.html
+
+- field_name: interpretasi
+  label: Interpretasi
+  output_validators: ignore_missing
+
+- field_name: metode_perhitungan
+  label: Metode Perhitungan
+  output_validators: ignore_missing
+
+- field_name: rumus
+  label: Rumus
+  output_validators: ignore_missing
+
+- field_name: klasifikasi
+  label: Variabel Disaggregasi/Klasifikasi
+  output_validators: ignore_missing
+
+- field_name: kodereferensi
+  label: Kode Referensi
+  form_placeholder: https://sirusa.web.bps.go.id/metadata/kegiatan/185
+  display_property: foaf:"https://sirusa.web.bps.go.id/metadata/kegiatan/
+  display_snippet: link.html
+
+- field_name: indikator_komposit
+  label: Indikator Komposit
+  output_validators: ignore_missing
+
+- field_name: level_estimasi
+  label: Level Estimasi
+  output_validators: ignore_missing
+
+- field_name: accrualPeriodicity
+  label: Jadwal Pemutakhiran
+  output_validators: ignore_missing
+
+- field_name: kriteria_prioritas
+  label: Kriteria Prioritas
+  output_validators: ignore_missing
+
+- field_name: indikator_prioritas
+  label: Indikator Prioritas
+  output_validators: ignore_missing

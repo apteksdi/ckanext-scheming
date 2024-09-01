@@ -79,6 +79,14 @@
       }
     },
     {
+      "preset_name": "selectt",
+      "values": {
+        "form_snippet": "selectt.html",
+        "display_snippet": "selectt.html",
+        "validators": "scheming_required scheming_choices"
+      }
+    },
+    {
       "preset_name": "multiple_checkbox",
       "values": {
         "form_snippet": "multiple_checkbox.html",

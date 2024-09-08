@@ -47,25 +47,6 @@ dataset_fields:
   form_placeholder: eg. Direktorat Alokasi Pendanaan Pembangunan
   display_property: dc:creator
 
-- field_name: author_email
-  label: Email Produsen Data
-  form_placeholder: joe@example.com
-  display_property: dc:creator
-  display_snippet: email.html
-  display_email_name_field: author
-
-- field_name: maintainer
-  label: Walidata
-  form_placeholder: eg. Pusat Data dan Informasi
-  display_property: dc:contributor
-
-- field_name: maintainer_email
-  label: Email Walidata
-  form_placeholder: joe@example.com
-  display_property: dc:contributor
-  display_snippet: email.html
-  display_email_name_field: maintainer
-
 #### METADATA DAFTAR DATA ####
 
 - field_name: accrualPeriodicity

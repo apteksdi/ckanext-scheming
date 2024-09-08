@@ -1,0 +1,91 @@
+scheming_version: 2
+dataset_type: dataset
+about: A reimplementation of the default CKAN dataset schema
+about_url: http://github.com/ckan/ckanext-scheming
+
+
+dataset_fields:
+
+- field_name: title
+  label: Title
+  preset: title_enabled
+  form_placeholder: eg. A descriptive title
+
+- field_name: name
+  label: URL
+  preset: dataset_slug
+  form_placeholder: eg. my-dataset
+
+- field_name: notes
+  label: Description
+  form_snippet: markdown_enabled.html
+  form_placeholder: eg. Some useful notes about the data
+
+- field_name: license_id
+  label: License
+  form_snippet: license.html
+  help_text: License definitions and additional information can be found at http://opendefinition.org/
+
+- field_name: owner_org
+  label: Unit Kerja
+  preset: dataset_organization
+
+- field_name: author
+  label: Produsen Data
+  form_placeholder: eg. Direktorat Alokasi Pendanaan Pembangunan
+  display_property: dc:creator
+  preset: text_enabled
+
+- field_name: accessRights
+  label: Akses Data
+  help_text: Make and model
+  help_inline: true
+  required: true
+  preset: select_enabled
+  choices:
+  - value: terbuka
+    label: Terbuka
+  - value: terbatas
+    label: Terbatas
+  - value: tertutup
+    label: Tertutup
+
+- field_name: prioritas_tahun
+  label: Data Prioritas
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: publisher_type
+  label: Tipe Instansi
+  help_text: Make and model
+  help_inline: true
+  required: true
+  preset: select_enabled
+  choices:
+  - value: pusat
+    label: Kementerian/Lembaga
+
+- field_name: publishing_status 
+  label: Publishing Status 
+  form_snippet: null 
+  display_snippet: null 
+  validators: ignore_missing publishing_status_validator
+
+resource_fields:
+
+- field_name: url
+  label: URL
+  preset: resource_url_upload
+
+- field_name: name
+  label: Name
+  form_placeholder: eg. January 2011 Gold Prices
+
+- field_name: description
+  label: Description
+  form_snippet: markdown.html
+  form_placeholder: Some useful notes about the data
+
+- field_name: format
+  label: Format
+  preset: resource_format_autocomplete

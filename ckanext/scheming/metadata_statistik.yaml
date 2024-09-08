@@ -13,8 +13,9 @@ dataset_fields:
 
 - field_name: name
   label: UUID Daftar Data
-  preset: dataset_slug
-  form_placeholder: eg. my-dataset
+  form_placeholder: http://example.com/dataset.json
+  display_property: foaf:homepage
+  display_snippet: link.html
 
 - field_name: notes
   label: Definisi

@@ -79,10 +79,10 @@
       }
     },
     {
-      "preset_name": "selectt",
+      "preset_name": "select_enabled",
       "values": {
-        "form_snippet": "selectt.html",
-        "display_snippet": "selectt.html",
+        "form_snippet": "select_enabled.html",
+        "display_snippet": "select_enabled.html",
         "validators": "scheming_required scheming_choices"
       }
     },
@@ -151,6 +151,33 @@
       "values": {
         "form_snippet": "markdown.html",
         "display_snippet": "markdown.html"
+      }
+    },
+    {
+      "preset_name": "markdown_enabled",
+      "values": {
+        "form_snippet": "markdown_enabled.html",
+        "display_snippet": "markdown_enabled.html"
+      }
+    },
+    {
+      "preset_name": "title_enabled",
+      "values": {
+        "validators": "if_empty_same_as(name) unicode_safe",
+        "form_snippet": "large_text_enabled.html",
+        "form_attrs": {
+          "data-module": "slug-preview-target"
+        }
+      }
+    },
+    {
+      "preset_name": "text_enabled",
+      "values": {
+        "validators": "if_empty_same_as(name) unicode_safe",
+        "form_snippet": "text_enabled.html",
+        "form_attrs": {
+          "data-module": "slug-preview-target"
+        }
       }
     },
     {

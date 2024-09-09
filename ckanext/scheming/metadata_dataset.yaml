@@ -79,11 +79,12 @@ resource_fields:
 
 - field_name: name
   label: Name
+  preset: text_enabled
   form_placeholder: eg. January 2011 Gold Prices
 
 - field_name: description
   label: Description
-  form_snippet: markdown.html
+  form_snippet: markdown_enabled.html
   form_placeholder: Some useful notes about the data
 
 - field_name: format

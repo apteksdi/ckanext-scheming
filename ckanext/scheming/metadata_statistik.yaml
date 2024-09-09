@@ -388,6 +388,14 @@ dataset_fields:
   label: Nama Produsen Data
   output_validators: ignore_missing
 
+- field_name: produsen_data_province_code
+  label: Kode Provinsi Produsen Data
+  output_validators: ignore_missing
+
+- field_name: produsen_data_city_code
+  label: Kode Kota Produsen Data
+  output_validators: ignore_missing
+
 - field_name: total_msvar
   label: Total MS-VAR
   output_validators: ignore_missing

@@ -17,30 +17,40 @@ dataset_fields:
   form_placeholder: eg. my-dataset
 
 - field_name: notes
-  label: Description
+  label: Definisi
   form_snippet: markdown_enabled.html
   form_placeholder: eg. Some useful notes about the data
-
-- field_name: license_id
-  label: License
-  form_snippet: license.html
-  help_text: License definitions and additional information can be found at http://opendefinition.org/
 
 - field_name: owner_org
   label: Unit Kerja
   preset: dataset_organization
 
+- field_name: url
+  label: Source
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: version
+  label: Version
+  output_validators: ignore_missing
+  preset: text_enabled
+
 - field_name: author
   label: Produsen Data
-  form_placeholder: eg. Direktorat Alokasi Pendanaan Pembangunan
-  display_property: dc:creator
+  output_validators: ignore_missing
+  preset: text_enabled
+
+#### METADATA DAFTAR DATA ####
+
+- field_name: accrualPeriodicity
+  label: Periode Data
+  output_validators: ignore_missing
   preset: text_enabled
 
 - field_name: accessRights
   label: Akses Data
   help_text: Make and model
   help_inline: true
-  required: true
   preset: select_enabled
   choices:
   - value: terbuka
@@ -50,8 +60,53 @@ dataset_fields:
   - value: tertutup
     label: Tertutup
 
+- field_name: id_dds
+  label: Kode Daftar Data
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: id_indikator_mms
+  label: Kode Indikator MMS
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: id_sds
+  label: Kode Standar Data
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: satuan
+  label: Satuan
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: ukuran
+  label: Ukuran
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: jenis
+  label: Jenis Data
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: theme
+  label: Kategori
+  output_validators: ignore_missing
+  preset: text_enabled
+
 - field_name: prioritas_tahun
   label: Data Prioritas
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: kriteria_prioritas
+  label: Kriteria Prioritas
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: indikator_prioritas
+  label: Indikator Prioritas
   output_validators: ignore_missing
   preset: text_enabled
 
@@ -59,17 +114,366 @@ dataset_fields:
   label: Tipe Instansi
   help_text: Make and model
   help_inline: true
-  required: true
   preset: select_enabled
   choices:
   - value: pusat
     label: Kementerian/Lembaga
+  - value: daerah-provinsi
+    label: Provinsi
+  - value: daerah-kota
+    label: Kota
+  - value: daerah-kabupaten
+    label: Kabupaten
 
 - field_name: publishing_status 
   label: Publishing Status 
   form_snippet: null 
   display_snippet: null 
   validators: ignore_missing publishing_status_validator
+
+#### METADATA INDIKATOR ####
+
+- field_name: id_msind
+  label: Kode Metadata Indikator
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: id_mskeg
+  label: Kode Metadata Kegiatan
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: interpretasi
+  label: Interpretasi
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: metode_perhitungan
+  label: Metode Perhitungan
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: rumus
+  label: Rumus
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: klasifikasi
+  label: Variabel Disaggregasi/Klasifikasi
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: kodereferensi
+  label: Kode Referensi
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: indikator_komposit
+  label: Indikator Komposit
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: level_estimasi
+  label: Level Estimasi
+  output_validators: ignore_missing
+  preset: text_enabled
+
+##### METADATA KEGIATAN #####
+
+- field_name: id_kegiatan_mms
+  label: ID Kegiatan MMS
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: id_kegiatan
+  label: ID Kegiatan
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: judul_kegiatan
+  label: Judul Kegiatan
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: tahun_kegiatan
+  label: Tahun Kegiatan
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: jenis_statistik
+  label: Jenis Statistik
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: cara_pengumpulan_data
+  label: Cara Pengumpulan Data
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: sektor_kegiatan
+  label: Sektor Kegiatan
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: identitas_rekomendasi
+  label: Identitas Rekomendasi
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: i_instansi_penyelanggara
+  label: Instansi Penyelenggara
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: i_alamat
+  label: Alamat Instansi
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: i_telepon
+  label: No. Telepon Instansi
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: i_email
+  label: Email Instansi
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: i_faksimile
+  label: No. Faksimile Instansi
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: ii_unit_eselon1
+  label: Unit Eselon 1
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: ii_unit_eselon2
+  label: Unit Eselon 2
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: ii_pj_nama
+  label: Nama Penanggungjawab
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: ii_pj_jabatan
+  label: Jabatan Penanggungjawab
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: ii_pj_alamat
+  label: Alamat Penanggungjawab
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: ii_pj_telepon
+  label: No. Telepon Penanggungjawab
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: ii_pj_email
+  label: Email Penanggungjawab
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: ii_pj_faksimile
+  label: No. Faksimile Penanggungjawab
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: iii_latar_belakang_kegiatan
+  label: Latar Belakang Kegiatan
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: iii_tujuan_kegiatan
+  label: Tujuan Kegiatan
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: iv_kegiatan_ini_dilakukan
+  label: Kegiatan Ini Dilakukan
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: iv_frekuensi_penyelanggara
+  label: Frekuensi Penyelenggara
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: iv_tipe_pengumpulan_data
+  label: Tipe Pengumpulan Data
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: iv_cakupan_wilayah_pengumpulan_data
+  label: Cakupan Wilayah Pengumpulan Data
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: iv_metode_pengumpulan_data
+  label: Metode Pengumpulan Data
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: iv_sarana_pengumpulan_data
+  label: Sarana Pengumpulan Data
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: iv_unit_pengumpulan_data
+  label: Unit Pengumpulan Data
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: v_jenis_rancangan_sampel
+  label: Jenis Rancangan Sampel
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: v_metode_pemilihan_sampel_tahap_terakhir
+  label: Metode Pemilihan Sampel Tahap Terakhir
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: v_metode_yang_digunakan
+  label: Metode Yang Digunakan
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: v_kerangka_sampel_tahap_terakhir
+  label: Kerangka Sampel Tahap Terakhir
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: v_fraksi_sampel_keseluruhan
+  label: Kerangka Sampel Tahap Terakhir
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: v_nilai_perkiraan_sampling_error_variabel_utama
+  label: Nilai Perkiraan Sampling Error Variabel Utama
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: v_unit_sampel
+  label: Unit Sampel
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: v_unit_observasi
+  label: Unit Observasi
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: vi_apakah_melakukan_uji_coba
+  label: Apakah Melakukan Uji Coba
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: vi_metode_pemeriksaan_kualitas_pengumpulan_data
+  label: Metode Pemeriksaan Kualitas Pengumpulan Data
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: vi_apakah_melakukan_penyesuaian_nonrespon
+  label: Apakah Melakukan Penyesuaian Nonrespon
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: vi_petugas_pengumpulan_data
+  label: Petugas Pengumpulan Data
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: vi_persyaratan_pendidikan_terendah_petugas_pengumpulan_data
+  label: Persyaratan Pendidikan Terendah Petugas
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: vi_jumlah_petugas_supervisor
+  label: Jumlah Petugas Supervisor
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: vi_jumlah_petugas_enumerator
+  label: Jumlah Petugas Enumerator
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: vi_apakah_melakukan_pelatihan_petugas
+  label: Apakah Melakukan Pelatihan Petugas
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: vii_tahapan_pengolahan_data
+  label: Tahapan Pengolahan Data
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: vii_metode_analisis
+  label: Metode Analisis
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: vii_unit_analisis
+  label: Unit Analisis
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: vii_tingkat_penyajian_hasil_analisis
+  label: Tingkat Penyajian Hasil Analisis
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: viii_ketersediaan_produk_tercetak
+  label: Ketersediaan Produk Tercetak
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: viii_ketersediaan_produk_digital
+  label: Ketersediaan Produk Digital
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: viii_ketersediaan_produk_mikrodata
+  label: Ketersediaan Produk Mikrodata
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: produsen_data_name
+  label: Nama Produsen Data
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: produsen_data_province_code
+  label: Kode Provinsi Produsen Data
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: produsen_data_city_code
+  label: Kode Kota Produsen Data
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: total_msvar
+  label: Total MS-VAR
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: total_msind
+  label: Total MS-IND
+  output_validators: ignore_missing
+  preset: text_enabled
+
+- field_name: submission_period
+  label: Periode Submission
+  output_validators: ignore_missing
+  preset: text_enabled
 
 resource_fields:
 
@@ -79,13 +483,8 @@ resource_fields:
 
 - field_name: name
   label: Name
-  preset: text_enabled
   form_placeholder: eg. January 2011 Gold Prices
-
-- field_name: description
-  label: Description
-  form_snippet: markdown_enabled.html
-  form_placeholder: Some useful notes about the data
+  preset: text_enabled
 
 - field_name: format
   label: Format

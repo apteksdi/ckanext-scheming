@@ -1,0 +1,169 @@
+scheming_version: 2
+dataset_type: spasial
+about: A reimplementation of the default CKAN dataset schema
+about_url: http://github.com/ckan/ckanext-scheming
+
+
+dataset_fields:
+
+- field_name: title
+  label: Title
+  preset: title
+  form_placeholder: eg. A descriptive title
+
+- field_name: name
+  label: URL
+  preset: dataset_slug
+  form_placeholder: eg. my-dataset
+
+- field_name: notes
+  label: Description
+  form_snippet: markdown.html
+  form_placeholder: eg. Some useful notes about the data
+
+- field_name: tag_string
+  label: Tags
+  preset: tag_string_autocomplete
+  form_placeholder: eg. economy, mental health, government
+
+- field_name: owner_org
+  label: Organization
+  preset: dataset_organization
+
+- field_name: url
+  label: Source
+  form_placeholder: http://example.com/dataset.json
+  display_property: foaf:homepage
+  display_snippet: link.html
+
+- field_name: version
+  label: Version
+  validators: ignore_missing unicode_safe package_version_validator
+  form_placeholder: '1.0'
+
+- field_name: author
+  label: Author
+  form_placeholder: Joe Bloggs
+  display_property: dc:creator
+
+- field_name: author_email
+  label: Author Email
+  form_placeholder: joe@example.com
+  display_property: dc:creator
+  display_snippet: email.html
+  display_email_name_field: author
+
+- field_name: maintainer
+  label: Maintainer
+  form_placeholder: Joe Bloggs
+  display_property: dc:contributor
+
+- field_name: maintainer_email
+  label: Maintainer Email
+  form_placeholder: joe@example.com
+  display_property: dc:contributor
+  display_snippet: email.html
+  display_email_name_field: maintainer
+
+- field_name: spatial_harvester
+  label: Spatial Harvester
+  output_validators: ignore_missing
+
+- field_name: progress
+  label: Progress
+  output_validators: ignore_missing
+
+- field_name: coupled-resource
+  label: Coupled Resource
+  output_validators: ignore_missing
+
+- field_name: frequency-of-update
+  label: Frequency of Update
+  output_validators: ignore_missing
+
+- field_name: licence
+  label: Licence
+  output_validators: ignore_missing
+
+- field_name: spatial
+  label: Spatial
+  output_validators: ignore_missing
+
+- field_name: access_constraints
+  label: Access Constraints
+  output_validators: ignore_missing
+
+- field_name: spatial-reference-system
+  label: Spatial Reference System
+  output_validators: ignore_missing
+
+- field_name: spatial-data-service-type
+  label: Spatial Data Service Type
+  output_validators: ignore_missing
+
+- field_name: dataset-reference-date
+  label: Dataset Reference Date
+  output_validators: ignore_missing
+
+- field_name: bbox-north-lat
+  label: Bbox North Lat
+  output_validators: ignore_missing
+
+- field_name: bbox-south-lat
+  label: Bbox South Lat
+  output_validators: ignore_missing
+
+- field_name: bbox-east-long
+  label: Bbox East Long
+  output_validators: ignore_missing
+
+- field_name: bbox-west-long
+  label: Bbox West Long
+  output_validators: ignore_missing
+
+- field_name: resource-type
+  label: Resource Type
+  output_validators: ignore_missing
+
+- field_name: lineage
+  label: Lineage
+  output_validators: ignore_missing
+
+- field_name: contact-email
+  label: email
+  output_validators: ignore_missing
+
+- field_name: metadata-date
+  label: Metadata Date
+  output_validators: ignore_missing
+
+- field_name: guid
+  label: GUID
+  output_validators: ignore_missing
+
+- field_name: metadata-language
+  label: Metadata Language
+  output_validators: ignore_missing
+
+- field_name: responsible-party
+  label: Responsible Party
+  output_validators: ignore_missing
+
+resource_fields:
+
+- field_name: url
+  label: URL
+  preset: resource_url_upload
+
+- field_name: name
+  label: Name
+  form_placeholder: eg. January 2011 Gold Prices
+
+- field_name: description
+  label: Description
+  form_snippet: markdown.html
+  form_placeholder: Some useful notes about the data
+
+- field_name: format
+  label: Format
+  preset: resource_format_autocomplete

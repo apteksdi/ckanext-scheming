@@ -163,7 +163,7 @@
     {
       "preset_name": "title_enabled",
       "values": {
-        "validators": "if_empty_same_as(name) unicode_safe",
+        "validators": "unicode_safe",
         "form_snippet": "large_text_enabled.html",
         "form_attrs": {
           "data-module": "slug-preview-target"
